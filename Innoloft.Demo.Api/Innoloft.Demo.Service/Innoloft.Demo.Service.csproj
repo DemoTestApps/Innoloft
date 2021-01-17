@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Innoloft.Demo.Core\Innoloft.Demo.Core.csproj" />
+    <ProjectReference Include="..\Innoloft.Demo.Data\Innoloft.Demo.Data.csproj" />
+  </ItemGroup>
+
+</Project>
