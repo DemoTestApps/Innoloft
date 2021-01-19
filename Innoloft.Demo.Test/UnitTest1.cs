@@ -23,7 +23,7 @@ namespace Innoloft.Demo.Test
                         .UseLazyLoadingProxies()
                         .UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=InnoloftDB;Trusted_Connection=True;");
                 var context = new InnoloftDBContext(options.Options);
-                return context;
+                return context ;
             }
 
             private static IMapper _mapper;
