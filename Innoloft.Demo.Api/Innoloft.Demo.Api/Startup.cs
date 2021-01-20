@@ -64,7 +64,7 @@ namespace Innoloft.Demo.Api
                 {
                     optionsBuilder
                     .UseLazyLoadingProxies()
-                    .UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=InnoloftDB;Trusted_Connection=True;");
+                    .UseSqlite("Data Source=Innoloft.db;");
                 });
 
 

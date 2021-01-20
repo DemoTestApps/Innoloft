@@ -40,5 +40,28 @@ namespace Innoloft.Demo.Data
         {
             return base.Set<T>();
         }
+
+
+        public int ExecuteSqlRaw(string sql, bool doNotEnsureTransaction = false, int? timeout = null, params object[] parameters)
+        {
+            var previousTimeout = Database.GetCommandTimeout();
+            Database.SetCommandTimeout(timeout);
+
+            var result = 0;
+            if (!doNotEnsureTransaction)
+            {
+                using (var transaction = Database.BeginTransaction())
+                {
+                    result = Database.ExecuteSqlRaw(sql, parameters);
+                    transaction.Commit();
+                }
+            }
+            else
+                result = Database.ExecuteSqlRaw(sql, parameters);
+
+            Database.SetCommandTimeout(previousTimeout);
+
+            return result;
+        }
     }
 }
